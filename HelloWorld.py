@@ -10,6 +10,14 @@ df = pd.read_csv("/home/bigdata/Downloads/Data/miniNSPL.csv")
 tree = pybktree.BKTree(pybktree.hamming_distance, [0, 4, 5, 14,65,4,76,4,35,63,23])
 print sorted(tree)
 
-print df
+print df.head()
+
+print df.shape
+
+Southampton = df[df.pcds.str.contains("SO15")]
+
+print Southampton.shape
+
+
 t2 = time.time()
 print t2 -t1
